@@ -2,6 +2,9 @@ pt-BR:
   app_title: "Emprego Já"
   links:
     back: "Voltar"
+  jobs:
+    create:
+      error: "Não foi possível criar a vaga"
   activerecord:
     models:
       job: "Vaga"
