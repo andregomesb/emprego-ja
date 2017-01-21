@@ -1,6 +1,25 @@
-<h1><%= @job.title %></h1>
-<p><%= @job.category %></p>
-<p><%= @job.company %></p>
-<p><%= @job.description %></p>
-<p><%= @job.location %></p>
-<%= link_to "Voltar", root_path %>
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= @job.title %></h1>
+    <div class="jobs-info-icons">
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon glyphicon-tag" aria-hidden="true"></span>
+        <%= @job.category %>
+      </span>
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+        <%= @job.company %>
+      </span>
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+        <%= @job.location %>
+      </span>
+    </div>
+    <hr>
+    <div class="jobs-info-description">
+      <p class="text-justify"> <%= @job.description %> </p>
+    </div>
+
+    <%= link_to t(:"links.back"), root_path %>
+  </div>
+</div>

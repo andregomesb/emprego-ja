@@ -1,0 +1,38 @@
+<%= form_for @job do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :title%>
+    <div>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :location%>
+    <div>
+      <%= f.text_field :location, class: "form-control", placeholder:"São Paulo - SP" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :category%>
+    <div>
+      <%= f.text_field :category, class: "form-control"%>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :company%>
+    <div>
+      <%= f.text_field :company, class: "form-control"%>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :description%>
+    <div>
+      <%= f.text_area :description, class: "form-control", rows:10%>
+    </div>
+  </fieldset>
+
+  <%= f.submit class:'btn btn-primary' %>
+<% end %>

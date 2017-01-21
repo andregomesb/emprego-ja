@@ -1,0 +1,14 @@
+pt-BR:
+  app_title: "Emprego Já"
+  links:
+    back: "Voltar"
+  activerecord:
+    models:
+      job: "Vaga"
+    attributes:
+      job:
+        title: "Título"
+        location: "Localização"
+        category: "Categoria"
+        company: "Empresa"
+        description: "Descrição"
