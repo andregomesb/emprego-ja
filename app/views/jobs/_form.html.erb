@@ -21,9 +21,9 @@
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :company%>
+    <%= f.label :company_id%>
     <div>
-      <%= f.text_field :company, class: "form-control"%>
+      <%= f.collection_select(:company_id, @companies, :id, :name, class: "form-control") %>
     </div>
   </fieldset>
 
