@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= @company.name %></h1>
+    <div class="jobs-info-icons">
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+        <%= @company.location %>
+      </span>
+
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+        <%= @company.mail %>
+      </span>
+
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+        <%= @company.phone %>
+      </span>
+    </div>
+    <%= link_to t(:"links.back"), root_path %>
+  </div>
+</div>

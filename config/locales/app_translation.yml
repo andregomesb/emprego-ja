@@ -8,6 +8,7 @@ pt-BR:
   activerecord:
     models:
       job: "Vaga"
+      company: "Empresa"
     attributes:
       job:
         title: "Título"
@@ -17,3 +18,8 @@ pt-BR:
         description: "Descrição"
         featured: "Destaque"
         company_id: "Empresa"
+      company:
+        name: "Nome"
+        location: "Localização"
+        mail: "Email"
+        phone: "Telefone"
