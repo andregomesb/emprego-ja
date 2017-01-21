@@ -14,6 +14,12 @@
         <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
         <%= @job.location %>
       </span>
+      <% if @job.featured? %>
+        <span class="job-content-attribute">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <strong><%= t :featured, scope: [:activerecord, :attributes, :job] %></strong>
+        <% end %>
+        </span>
     </div>
     <hr>
     <div class="jobs-info-description">

@@ -1,11 +1,26 @@
 <%= link_to job, class:"job-index-links" do %>
   <li class="list-group-item">
-    <h1 class="list-group-item-heading"><%= job.title %></h1>
-     <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-    <%= job.company %>
-    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-    <%= job.location %>
-    <!-- <span class="glyphicon glyphicon-console"></span> -->
+    <h1 class="list-group-item-heading job-title-display"><%= job.title %></h1>
+    <div class="jobs-info-icons">
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon glyphicon-tag" aria-hidden="true"></span>
+        <%= job.category %>
+      </span>
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+        <%= job.company %>
+      </span>
+      <span class="job-content-attribute">
+        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+        <%= job.location %>
+      </span>
+      <% if job.featured? %>
+        <span class="job-content-attribute">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <strong><%= t :featured, scope: [:activerecord, :attributes, :job] %></strong>
+        <% end %>
+        </span>
+    </div>
   </li>
   <hr>
 <% end %>

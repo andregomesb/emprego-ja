@@ -1,7 +1,11 @@
+.job-title-display{
+  padding-bottom: 10px;
+}
 .jobs-info-icons {
-  padding-top: 10px;
-  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 0px;
   .job-content-attribute{
+    padding-top: 5px;
     padding-right: 10px;
   }
 }
@@ -11,7 +15,6 @@
 }
 
 a.job-index-links:hover{
-
   text-decoration: none;
 }
 
