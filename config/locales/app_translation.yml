@@ -1,5 +1,6 @@
 pt-BR:
   app_title: "Emprego Já"
+  app_job_list: "Vagas Disponíveis"
   app_company_list: "Lista de Empresas"
   app_category_list: "Categorias"
   links:
@@ -20,6 +21,14 @@ pt-BR:
       empty: "Nenhuma vaga disponível"
     new:
       title: "Cadastrar Empresa"
+    create:
+      success: "Empresa criada com sucesso"
+      error: "Não foi possível criar empresa"
+    edit:
+      title: "Editar Empresa"
+    update:
+      success: "Empresa atualizada com sucesso"
+      error: "Não foi possível atualizar a empresa"
   categories:
     show:
       empty: "Nenhuma vaga disponível"

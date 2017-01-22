@@ -1,6 +1,12 @@
 <div class="row">
   <div class="col-md-12">
-    <h1><%= @company.name %>    <span><%= image_tag("estrela.png", size: "30x30")%></span></h1>
+    <h1>
+      <%= @company.name %>
+      <% if @company.premium? %>
+        <span><%= image_tag("estrela.png", size: "30x30")%></span>
+      <% end %>
+    </h1>
+
     <div class="jobs-info-icons">
       <span class="job-content-attribute">
         <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>

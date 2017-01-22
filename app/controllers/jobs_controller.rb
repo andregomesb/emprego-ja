@@ -20,7 +20,7 @@ class JobsController < ApplicationController
       redirect_to @job, notice: t(".success")
     else
       set_collection
-      flash[:notice] = t(".error")
+      flash.now[:alert] = t(".error")
       render :new
     end
   end
@@ -33,7 +33,7 @@ class JobsController < ApplicationController
       redirect_to @job, notice: t(".success")
     else
       set_collection
-      flash[:notice] = t(".error")
+      flash.now[:alert] = t(".error")
       render :edit
     end
   end

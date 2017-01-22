@@ -9,17 +9,15 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new category_params
-
     if @category.save
       redirect_to @category, notice: t(".success")
     else
-      flash[:notice] = t(".error")
+      flash.now[:alert] = t(".error")
       render :new
     end
   end
 
   private
-
   def category_params
     params.require(:category).permit(:name)
   end

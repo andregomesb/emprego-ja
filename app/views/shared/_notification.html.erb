@@ -1,0 +1,12 @@
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+  <% if notice %>
+    <p id="notice" class="alert alert-success" role="alert"><%= notice %> </p>
+  <% end %>
+
+  <% if alert.present? %>
+    <p id="alert" class="alert alert-danger" role="alert"><%= alert %> </p>
+  <% end %>
+</div>
+</div>
+
