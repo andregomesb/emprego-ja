@@ -27,7 +27,7 @@ pt-BR:
       job:
         title: "Título"
         location: "Localização"
-        category: "Categoria"
+        category_id: "Categoria"
         company: "Empresa"
         description: "Descrição"
         featured: "Destaque"

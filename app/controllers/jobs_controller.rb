@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   before_action :set_job, only: [:show, :edit, :update]
-  before_action :set_companies, only: [:index, :new, :edit]
+  before_action :set_collection, only: [:index, :new, :edit]
 
   def index
     @jobs = Job.all
@@ -19,7 +19,7 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to @job, notice: t(".success")
     else
-      set_companies
+      set_collection
       flash[:notice] = t(".error")
       render :new
     end
@@ -32,7 +32,7 @@ class JobsController < ApplicationController
     if @job.update(job_params)
       redirect_to @job, notice: t(".success")
     else
-      set_companies
+      set_collection
       flash[:notice] = t(".error")
       render :edit
     end
@@ -41,14 +41,15 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :location, :description, :company_id, :category, :featured)
+    params.require(:job).permit(:title, :location, :description, :company_id, :category_id, :featured)
   end
 
   def set_job
     @job = Job.find(params[:id])
   end
 
-  def set_companies
+  def set_collection
+    @categories = Category.all
     @companies = Company.all
   end
 end
