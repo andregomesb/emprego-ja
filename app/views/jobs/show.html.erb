@@ -18,8 +18,14 @@
         <span class="job-content-attribute">
           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
           <strong><%= t :featured, scope: [:activerecord, :attributes, :job] %></strong>
+          </span>
         <% end %>
+
+        <% if @job.expired? %>
+        <span class="job-content-attribute">
+          <span class="label label-danger"><%= t(".expired")%></span>
         </span>
+        <% end %>
     </div>
     <hr>
     <div class="jobs-info-description">

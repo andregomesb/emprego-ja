@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   before_action :set_collection, only: [:index, :new, :edit]
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.reject{|job| job.expired?}
   end
 
   def show

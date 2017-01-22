@@ -6,6 +6,8 @@ pt-BR:
   links:
     back: "Voltar"
   jobs:
+    show:
+      expired: "Vaga Expirada"
     new:
       title: "Cadastrar Vaga"
     create:
