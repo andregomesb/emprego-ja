@@ -23,6 +23,11 @@ pt-BR:
   categories:
     show:
       empty: "Nenhuma vaga disponível"
+    new:
+      title: "Cadastrar Categoria"
+    create:
+      success: "Categoria criada com sucesso"
+      error: "Não foi possível criar categoria"
   activerecord:
     models:
       job: "Vaga"
