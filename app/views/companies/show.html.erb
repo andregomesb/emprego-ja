@@ -17,6 +17,8 @@
         <%= @company.phone %>
       </span>
     </div>
+
+    <%= render(partial: 'jobs/job', collection: @company.jobs, as: :job) || content_tag(:h2, t(".empty")) %>
     <%= link_to t(:"links.back"), root_path %>
   </div>
 </div>

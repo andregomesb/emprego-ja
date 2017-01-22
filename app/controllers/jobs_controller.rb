@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   before_action :set_job, only: [:show, :edit, :update]
-  before_action :set_companies, only: [:new, :edit]
+  before_action :set_companies, only: [:index, :new, :edit]
 
   def index
     @jobs = Job.all

@@ -1,5 +1,6 @@
 pt-BR:
   app_title: "Emprego Já"
+  app_company_list: "Lista de Empresas"
   links:
     back: "Voltar"
   jobs:
@@ -14,6 +15,8 @@ pt-BR:
       success: "Vaga atualizada com sucesso"
       error: "Não foi possível atualizar a vaga"
   companies:
+    show:
+      empty: "Nenhuma vaga disponível"
     new:
       title: "Cadastrar Empresa"
   activerecord:
