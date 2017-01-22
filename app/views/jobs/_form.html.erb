@@ -1,6 +1,7 @@
 <%= form_for @job do |f| %>
   <fieldset class="form-group">
     <%= f.label :title%>
+    <%= render partial: 'shared/form_notification', locals: {object: @job, field: :title} %>
     <div>
       <%= f.text_field :title, class: "form-control" %>
     </div>
@@ -8,6 +9,7 @@
 
   <fieldset class="form-group">
     <%= f.label :location%>
+    <%= render partial: 'shared/form_notification', locals: {object: @job, field: :location} %>
     <div>
       <%= f.text_field :location, class: "form-control", placeholder:"São Paulo - SP" %>
     </div>
@@ -29,6 +31,7 @@
 
   <fieldset class="form-group">
     <%= f.label :description%>
+    <%= render partial: 'shared/form_notification', locals: {object: @job, field: :description} %>
     <div>
       <%= f.text_area :description, class: "form-control", rows:10%>
     </div>

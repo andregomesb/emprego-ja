@@ -1,6 +1,1 @@
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <h1><%= t(:title, scope: [:companies, :new]) %></h1>
-    <%= render 'form' %>
-  </div>
-</div>
+<%= render partial: 'shared/form_render', locals:{model: :companies, action: :new} %>

@@ -1,8 +1,6 @@
-  <div class="alert alert-danger" role="alert">
-    <ul>
-    <% object.errors.full_messages.each do |error_message| %>
-      <li><%= error_message %></li>
-    <% end %>
-    </ul>
+<% if object.errors.has_key? field %>
+  <div class="error-message">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <%= object.errors[field].first %><br>
   </div>
-
+<% end %>

@@ -1,6 +1,7 @@
 <%= form_for @category do |f| %>
   <fieldset class="form-group">
     <%= f.label :name%>
+    <%= render partial: 'shared/form_notification', locals: {object: @category, field: :name} %>
     <div>
       <%= f.text_field :name, class: "form-control" %>
     </div>

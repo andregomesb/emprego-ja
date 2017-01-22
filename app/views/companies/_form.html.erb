@@ -1,34 +1,26 @@
-<% if @company.errors.any? %>
-  <%= render partial: 'shared/form_notification', object: @company, as: :object %>
-<% end %>
-
 <%= form_for @company do |f| %>
   <fieldset class="form-group">
     <%= f.label :name%>
-    <div>
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
+    <%= render partial: 'shared/form_notification', locals: {object: @company, field: :name} %>
+    <%= f.text_field :name, class: "form-control" %>
   </fieldset>
 
   <fieldset class="form-group">
     <%= f.label :location%>
-    <div>
-      <%= f.text_field :location, class: "form-control", placeholder:"São Paulo - SP" %>
-    </div>
+    <%= render partial: 'shared/form_notification', locals: {object: @company, field: :location} %>
+    <%= f.text_field :location, class: "form-control", placeholder:"São Paulo - SP" %>
   </fieldset>
 
   <fieldset class="form-group">
     <%= f.label :mail%>
-    <div>
-      <%= f.text_field :mail, class: "form-control"%>
-    </div>
+    <%= render partial: 'shared/form_notification', locals: {object: @company, field: :mail} %>
+    <%= f.text_field :mail, class: "form-control"%>
   </fieldset>
 
   <fieldset class="form-group">
     <%= f.label :phone%>
-    <div>
-      <%= f.text_field :phone, class: "form-control"%>
-    </div>
+    <%= render partial: 'shared/form_notification', locals: {object: @company, field: :phone} %>
+    <%= f.text_field :phone, class: "form-control"%>
   </fieldset>
 
   <%= f.submit class:'btn btn-primary' %>
