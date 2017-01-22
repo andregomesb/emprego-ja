@@ -13,10 +13,14 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Criar Job", new_job_path%></li>
-        <li><%= link_to "Criar Job", new_job_path%></li>
-        <li><%= link_to "Criar Job", new_job_path%></li>
-        <li><%= link_to "Criar Job", new_job_path%></li>
+        <li> <%= link_to "Cadastrar #{t :job, scope:[:activerecord, :models]}",
+              new_job_path%></li>
+        <li><%= link_to "Cadastrar #{t :company, scope:[:activerecord, :models]}",
+              new_company_path%></li>
+        <li><%= link_to "# #{t :job, scope:[:activerecord, :models]}",
+              new_job_path%></li>
+        <li><%= link_to "# #{t :company, scope:[:activerecord, :models]}",
+              new_job_path%></li>
       </ul>
     </div>
 

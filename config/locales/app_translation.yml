@@ -3,8 +3,19 @@ pt-BR:
   links:
     back: "Voltar"
   jobs:
+    new:
+      title: "Cadastrar Vaga"
     create:
+      success: "Vaga criada com sucesso"
       error: "Não foi possível criar a vaga"
+    edit:
+      title: "Editar Vaga"
+    update:
+      success: "Vaga atualizada com sucesso"
+      error: "Não foi possível atualizar a vaga"
+  companies:
+    new:
+      title: "Cadastrar Empresa"
   activerecord:
     models:
       job: "Vaga"

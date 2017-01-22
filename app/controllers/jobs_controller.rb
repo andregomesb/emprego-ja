@@ -1,26 +1,40 @@
 class JobsController < ApplicationController
 
+  before_action :set_job, only: [:show, :edit, :update]
+  before_action :set_companies, only: [:new, :edit]
+
   def index
     @jobs = Job.all
   end
 
   def show
-    @job = Job.find(params[:id])
   end
 
   def new
     @job = Job.new
-    @companies = Company.all
   end
 
   def create
     @job = Job.new(job_params)
     if @job.save
-      redirect_to @job
+      redirect_to @job, notice: t(".success")
     else
-      @companies = Company.all
+      set_companies
       flash[:notice] = t(".error")
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @job.update(job_params)
+      redirect_to @job, notice: t(".success")
+    else
+      set_companies
+      flash[:notice] = t(".error")
+      render :edit
     end
   end
 
@@ -28,5 +42,13 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:title, :location, :description, :company_id, :category, :featured)
+  end
+
+  def set_job
+    @job = Job.find(params[:id])
+  end
+
+  def set_companies
+    @companies = Company.all
   end
 end

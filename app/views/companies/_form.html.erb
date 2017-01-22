@@ -1,0 +1,31 @@
+<%= form_for @company do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :name%>
+    <div>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :location%>
+    <div>
+      <%= f.text_field :location, class: "form-control", placeholder:"São Paulo - SP" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :mail%>
+    <div>
+      <%= f.text_field :mail, class: "form-control"%>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :phone%>
+    <div>
+      <%= f.text_field :phone, class: "form-control"%>
+    </div>
+  </fieldset>
+
+  <%= f.submit class:'btn btn-primary' %>
+<% end %>
