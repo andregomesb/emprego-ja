@@ -1,5 +1,10 @@
 <li class="list-group-item">
-  <h1 class="list-group-item-heading job-title-display"><%= link_to job.title, job %></h1>
+  <h1 class="list-group-item-heading job-title-display">
+    <%= link_to job.title, job %>
+    <% if job.new? %>
+      <span class="badge"><%= t :new_job, scope:[:jobs, :index] %></span>
+    <% end %>
+  </h1>
   <div class="jobs-info-icons">
     <span class="job-content-attribute">
       <span class="glyphicon glyphicon glyphicon-tag" aria-hidden="true"></span>
@@ -17,8 +22,8 @@
       <span class="job-content-attribute">
         <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
         <strong><%= t :featured, scope: [:activerecord, :attributes, :job] %></strong>
-      <% end %>
       </span>
+      <% end %>
   </div>
 </li>
 <hr>
