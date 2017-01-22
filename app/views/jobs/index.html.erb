@@ -1,13 +1,23 @@
 <div class="row">
 <h1><%= t :app_title %></h1>
 <div class="col-md-8">
+  <h2><%= t :app_title %></h2>
   <ul class="list-group">
     <%= render @jobs %>
   </ul>
 </div>
 
 <div class="col-md-4">
-  <h1><%= t :app_company_list %></h1>
-  <%= render @companies %>
+  <aside>
+    <div>
+      <h2><%= t :app_company_list %></h2>
+      <%= render partial: 'shared/aside_links', collection: @companies, as: :object %>
+    </div>
+
+    <div>
+      <h2><%= t :app_category_list %></h2>
+      <%= render partial: 'shared/aside_links', collection: @categories, as: :object %>
+    </div>
+  </aside>
 </div>
 </div>

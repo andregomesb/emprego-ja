@@ -1,6 +1,7 @@
 pt-BR:
   app_title: "Emprego Já"
   app_company_list: "Lista de Empresas"
+  app_category_list: "Categorias"
   links:
     back: "Voltar"
   jobs:
@@ -19,10 +20,14 @@ pt-BR:
       empty: "Nenhuma vaga disponível"
     new:
       title: "Cadastrar Empresa"
+  categories:
+    show:
+      empty: "Nenhuma vaga disponível"
   activerecord:
     models:
       job: "Vaga"
       company: "Empresa"
+      category: "Categoria"
     attributes:
       job:
         title: "Título"
@@ -37,3 +42,5 @@ pt-BR:
         location: "Localização"
         mail: "Email"
         phone: "Telefone"
+      category:
+        name: "Categoria"

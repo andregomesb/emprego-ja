@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= @category.name %></h1>
+    <%= render(partial: 'jobs/job', collection: @category.jobs, as: :job) || content_tag(:h2, t(".empty")) %>
+     <%= link_to t(:"links.back"), root_path %>
+  </div>
+</div>
