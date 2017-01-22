@@ -21,4 +21,35 @@ feature 'User create companies' do
     expect(page).to have_content(company.mail)
     expect(page).to have_content(company.phone)
   end
+
+  scenario 'is unique' do
+    Company.create(name: 'Campus Code',
+                location: 'São Paulo',
+                mail: 'contato@campus.com.br',
+                phone: '2369-3476')
+    company = Company.new(name: 'Campus Code',
+                          location: 'São Paulo',
+                          mail: 'contato@campus.com.br',
+                          phone: '2369-3476')
+
+    visit new_company_path
+
+    fill_in 'Nome',      with: company.name
+    fill_in 'Local',     with: company.location
+    fill_in 'Email',     with: company.mail
+    fill_in 'Telefone',  with: company.phone
+
+    click_on 'Criar Empresa'
+
+    expect(page).to have_content("Não foi possível criar empresa")
+    expect(page).to have_content("Nome já está em uso")
+  end
+
+  scenario 'and should fill all fields' do
+    visit new_company_path
+
+    click_on 'Criar Empresa'
+
+    expect(page).to have_content 'Não foi possível criar empresa'
+  end
 end
