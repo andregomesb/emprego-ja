@@ -1,1 +1,6 @@
-<h3><%= link_to object.name, object %></h3>
+<h3>
+  <%= link_to object.name, object %>
+  <% if object.respond_to?(:premium?) && object.premium? %>
+  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+  <% end %>
+</h3>
