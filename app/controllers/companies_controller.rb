@@ -1,9 +1,9 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: [:edit, :update]
+  before_action :set_company, only: [:show, :edit, :update]
 
   def show
-    @company = Company.find(params[:id])
   end
+
   def new
     @company = Company.new
   end

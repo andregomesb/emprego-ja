@@ -103,9 +103,9 @@ RSpec.describe Job, :type => :model do
       end
     end
 
-    context "created 6 days ago" do
+    context "created 5 days ago" do
       it "is not new" do
-        travel_to 6.days.ago do
+        travel_to 5.days.ago do
           @job = @company.jobs.create(title: 'Desenvolvedor Rails',
                            description: 'Desenvolvedor Full Stack Rails',
                            location: 'São Paulo - SP',
@@ -115,9 +115,9 @@ RSpec.describe Job, :type => :model do
       end
     end
 
-    context "created 5 days ago" do
+    context "created 6 days ago" do
       it "is not new" do
-        travel_to 5.days.ago do
+        travel_to 6.days.ago do
           @job = @company.jobs.create(title: 'Desenvolvedor Rails',
                            description: 'Desenvolvedor Full Stack Rails',
                            location: 'São Paulo - SP',
