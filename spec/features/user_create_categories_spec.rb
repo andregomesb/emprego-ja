@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "User create category" do
   scenario "successfully" do
-    category = "Desenvolvedor"
+    category = create(:category)
 
     visit new_category_path
 
@@ -21,24 +21,22 @@ feature "User create category" do
   end
 
   scenario "and is unique" do
-    category = "UX"
-    Category.create(name: category)
+    category = create(:category)
 
     visit new_category_path
 
-    fill_in "Categoria", with: category
+    fill_in "Categoria", with: category.name
     click_on "Criar Categoria"
 
     expect(page).to have_content 'Não foi possível criar categoria'
   end
 
   scenario "and validates case sensitive" do
-    category = "UX"
-    Category.create(name: category)
+    category = create(:category)
 
     visit new_category_path
 
-    fill_in "Categoria", with: "uX"
+    fill_in "Categoria", with: category.name.upcase
     click_on "Criar Categoria"
 
     expect(page).to have_content 'Não foi possível criar categoria'

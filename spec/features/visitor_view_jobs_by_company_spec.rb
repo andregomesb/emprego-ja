@@ -2,25 +2,16 @@ require 'rails_helper'
 
 feature 'Visitor view jobs by company' do
   scenario 'successfully' do
-    category = Category.create(name: 'Desenvolvedor')
-    category_ux = Category.create(name: 'UX')
+    category = create(:category)
+    category_ux = create(:category, name: 'UX')
 
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
+    company = create(:company)
 
-    job = Job.create(title: 'Dev Master',
-                     location: 'Rio de Janeiro',
-                     company: company,
-                     category: category,
-                     description: 'Vaga para Dev Master para Bootcamp Rails')
+    job = create(:job, category: category, company: company)
 
-    another_job = Job.create(title: 'UX Senior',
-                             location: 'São Paulo',
+    another_job = create(:job, title: 'UX Senior',
                              company: company,
-                             category: category_ux,
-                             description: 'UX com experiência em redes sociais')
+                             category: category_ux)
 
     visit root_path
 

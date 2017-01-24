@@ -2,10 +2,7 @@ require 'rails_helper'
 
 feature 'User create companies' do
   scenario 'successfully' do
-    company = Company.new(name: 'Campus Code',
-                          location: 'São Paulo',
-                          mail: 'contato@campus.com.br',
-                          phone: '2369-3476')
+    company = build(:company)
 
     visit new_company_path
 
@@ -23,14 +20,7 @@ feature 'User create companies' do
   end
 
   scenario 'is unique' do
-    Company.create(name: 'Campus Code',
-                location: 'São Paulo',
-                mail: 'contato@campus.com.br',
-                phone: '2369-3476')
-    company = Company.new(name: 'Campus Code',
-                          location: 'São Paulo',
-                          mail: 'contato@campus.com.br',
-                          phone: '2369-3476')
+    company = create(:company)
 
     visit new_company_path
 

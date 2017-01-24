@@ -2,42 +2,24 @@ require 'rails_helper'
 
 feature 'Visitor view jobs on home page' do
   scenario 'successfully' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
-
-    category = Category.create(name: 'Desenvolvedor')
-
-    Job.create(title: 'Vaga de Dev',
-               category: category,
-               company: company,
-               description: 'Dev Junior Rails com ao menos um projeto',
-               location: 'São Paulo')
+    job = create(:job)
 
     visit root_path
 
-    expect(page).to have_content('Vaga de Dev')
-    expect(page).to have_content('Campus Code')
-    expect(page).to have_content('São Paulo')
+    expect(page).to have_content(job.title)
+    expect(page).to have_content(job.company.name)
+    expect(page).to have_content(job.location)
     expect(page).not_to have_content('Destaque')
   end
 
   scenario 'and view a list of jobs' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
+    company = create(:company)
 
-    category = Category.create(name: 'Desenvolvedor')
+    category = create(:category)
 
-    job = Job.create(title: 'Vaga de Dev',
-               category: category,
-               company: company,
-               description: 'Dev Junior Rails com ao menos um projeto',
-               location: 'São Paulo')
+    job = create(:job, category: category, company: company)
 
-    another_job = Job.create(title: 'UX Senior',
+    another_job = create(:job, title: 'UX Senior',
                              company: company,
                              category: category,
                              description: 'UX com experiência em redes sociais',

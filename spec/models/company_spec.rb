@@ -2,12 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Company, type: :model do
   before do
-    @company = Company.create(name: 'Campus Code',
-                              location: 'São Paulo',
-                              phone: '11 2369 3476',
-                              mail: 'contato@campuscode.com.br')
+    @company = create(:company)
 
-    @category = Category.create(name: 'Desenvolvedor')
+    @category = create(:category)
   end
 
   describe "#premium?" do
@@ -20,10 +17,7 @@ RSpec.describe Company, type: :model do
     context "has 4 jobs" do
       it "is not premium" do
         4.times do
-          @company.jobs.create(title: 'Desenvolvedor Rails',
-                               description: 'Desenvolvedor Full Stack Rails',
-                               location: 'São Paulo - SP',
-                               category: @category)
+          create(:job, company: @company, category: @category)
         end
         expect(@company).to_not be_premium
       end
@@ -32,10 +26,7 @@ RSpec.describe Company, type: :model do
     context "has 5 jobs" do
       it "is premium" do
         5.times do
-          @company.jobs.create(title: 'Desenvolvedor Rails',
-                               description: 'Desenvolvedor Full Stack Rails',
-                               location: 'São Paulo - SP',
-                               category: @category)
+          create(:job, company: @company, category: @category)
         end
         expect(@company).to be_premium
       end
@@ -44,10 +35,7 @@ RSpec.describe Company, type: :model do
     context "has 10 jobs" do
       it "is premium" do
         10.times do
-          @company.jobs.create(title: 'Desenvolvedor Rails',
-                               description: 'Desenvolvedor Full Stack Rails',
-                               location: 'São Paulo - SP',
-                               category: @category)
+          create(:job, company: @company, category: @category)
         end
         expect(@company).to be_premium
       end
